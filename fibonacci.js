@@ -13,6 +13,17 @@ function fibs(n) {
   return array;
 }
 
-fibs(8);
+// console.log(fibs(8));
 
-console.log(fibs(8));
+function fibsRec(n) {
+  if (n == 0) {
+    return [0];
+  } else if (n == 1 || n == 2) {
+    return [0, 1];
+  }
+  let array = fibsRec(n - 1);
+  array.push(array[array.length - 2] + array[array.length - 1]);
+  return array;
+}
+
+console.log(fibsRec(8));
